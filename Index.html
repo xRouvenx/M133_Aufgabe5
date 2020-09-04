@@ -10,14 +10,15 @@
 
 <body>
     <form>
-        <input name="vorname" type="text"></input>
-        <input name="nachname" type="text"></input>
+        <input class="leftbound" name="vorname" type="text" placeholder="Vorname" required></input>
+        <input class="rightbound" name="nachname" type="text" placeholder="Nachname" required></input>
         <br />
-        <input name="strasse" type="text"></input>
-        <input name="adressnummer" type="text" max="4"></input>
+        <input class="leftbound" id="long" name="strasse" type="text" placeholder="Strasse" required></input>
+        <input class="rightbound" id="short" name="adressnummer" type="text" max="4" placeholder="Nr. (opt.)"></input>
         <br />
-        <input name="plz" type="number" min="1000" max="9999"></input>
-        <input name="ort" type="list" list="orte"></input>
+        <input class="leftbound" id="short" name="plz" type="number" min="1000" max="9999" placeholder="PLZ"
+            required></input>
+        <input class="rightbound" id="long" name="ort" type="list" list="orte" placeholder="Ort" required></input>
         <datalist id="orte">
             <option value="Rothenburg">
             <option value="Hochdorf">
@@ -26,11 +27,15 @@
             <option value="Sursee">
         </datalist>
         <br />
-        <input name="alter" type="number" max="150"></input>
-        <input name="emailfield" type="email" multiple></input>
+        <input class="leftbound" id="short" name="alter" type="number" min="0" max="150"
+            placeholder="Alter (opt.)"></input>
+        <input class="rightbound" id="long" name="emailfield" type="email" multiple placeholder="Email-Adresse"
+            required></input>
         <br />
-        <input type="submit"></input>
-        <input type="reset"></input>
+        <div class="rightbound" >
+            <input type="reset" value="Verwerfen"></input>
+            <input type="submit" value="Senden"></input>
+        </div>
     </form>
 </body>
 
